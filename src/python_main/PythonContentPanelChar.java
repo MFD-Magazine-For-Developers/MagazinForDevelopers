@@ -1,14 +1,22 @@
 package python_main;
 
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+
 import templates.ContentPanel;
+import templates.MainPanel;
+import templates.ReadingFile;
 
-public class PythonContentPanelChar extends ContentPanel{
+public class PythonContentPanelChar extends ContentPanel {
 
-	PythonContentPanelChar(){
+	public PythonContentPanelChar() {
 		super();
-		rf.writeTitle("Python 특징", this);
+		ReadingFile rf = new ReadingFile();
+		setLayout(new FlowLayout(FlowLayout.LEFT, 100, 35));
+		setBackground(MainPanel.defaultContentColor);
+		setPreferredSize(new Dimension(500, 5000));
+
+		rf.writeTitle("Python의 특징", this);
 		rf.readText("TxtFiles/PythonTxt/python_char.txt", this);
 	}
-	
-	
 }

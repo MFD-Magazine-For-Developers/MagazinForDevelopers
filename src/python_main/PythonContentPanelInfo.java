@@ -9,10 +9,17 @@ import templates.ReadingFile;
 
 public class PythonContentPanelInfo extends ContentPanel {
 
-	public PythonContentPanelInfo(){
+	public PythonContentPanelInfo() {
+
 		super();
-		rf.writeTitle("Python소개", this); // 각 챕터의 이름입니다.
-		rf.readText("TxtFiles/PythonTxt/python_intro.txt", this);
+		ReadingFile rf = new ReadingFile();
+		setLayout(new FlowLayout(FlowLayout.LEFT, 100, 35));
+		setBackground(MainPanel.defaultContentColor);
+		setPreferredSize(new Dimension(500, 5000));
+
+		rf.writeTitle("Python 소개", this); // 각 챕터의 이름입니다.
+		rf.readText("TxtFiles/PythonTxt/python_info.txt", this);
 
 	}
+
 }

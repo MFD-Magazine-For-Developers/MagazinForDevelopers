@@ -1,8 +1,18 @@
 package main;
-import java.awt.*;
-import javax.swing.*;
-import java.awt.event.*;
-import javax.swing.event.*;
+import java.awt.Color;
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionAdapter;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+import templates.ReadingFile;
 
 public class info extends JFrame{
 	
@@ -15,7 +25,7 @@ public class info extends JFrame{
 		setTitle("About MFD");
 		setVisible(true);
 		// 잡지 규격에 맞춤. (약간씩만 늘림.)
-        this.setSize(736,950);
+        this.setSize(1024,768);
         // 모니터 가운데 배치
         Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
         int xpos = (int)(screen.getWidth()/2 - super.getWidth()/2);
@@ -25,7 +35,26 @@ public class info extends JFrame{
 		
 		container = getContentPane();
         container.setBackground(mainYellow);
+        setLayout(new FlowLayout(FlowLayout.CENTER,110,30));
+     
         
+        ImageIcon imageIcon = new ImageIcon(new ImageIcon("images/mainImage.gif").getImage().getScaledInstance(110, 110, Image.SCALE_DEFAULT));
+    	JLabel mainBtn = new JLabel();
+		mainBtn.setIcon(imageIcon); 
+		mainBtn.setLayout(new FlowLayout(FlowLayout.LEFT,110,30));
+		add(mainBtn);
+
+		mainBtn.addMouseMotionListener(new MouseMotionAdapter() {
+	        //override the method // 누르고 살짝 드래그 할 경우 메인 뷰로 넘어갑니다.
+	        public void mouseDragged(MouseEvent arg0) {
+	        	dispose();
+	        	new newMainView();
+	        }
+	    });
+		
+        ReadingFile rf = new ReadingFile();
+        rf.writeTitle("MFD 소개", this);
+        rf.readText("TxtFiles/MFD_introduction.txt",this );
 	}
 	
 	public static void main(String[] args) {

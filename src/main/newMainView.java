@@ -2,6 +2,7 @@ package main;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -25,16 +26,12 @@ import javax.swing.tree.DefaultTreeCellRenderer;
 
 import java_main.JContentPanelInfo;
 import java_main.JavaButtonsWrapper;
-import java_main.JavaMain;
 import js_main.JsButtonsWrapper;
 import js_main.JsContentPanelInfo;
-import js_main.JsMain;
 import python_main.PythonButtonsWrapper;
 import python_main.PythonContentPanelInfo;
-import python_main.PythonMain;
 import swift_main.SwContentPanelInfo;
 import swift_main.SwiftButtonsWrapper;
-import swift_main.SwiftMain;
 import templates.MainPanel;
 
 import javax.swing.event.TreeSelectionEvent;
@@ -117,9 +114,7 @@ public class newMainView {
 			frame.getContentPane().add(panel_2, BorderLayout.CENTER);
 
 			// Image (gif)
-			ImageIcon ii = new ImageIcon("images/mainImage.gif");
-
-			// ImageIcon ii = new ImageIcon("images/mainImage.gif");
+			ImageIcon ii = new ImageIcon(new ImageIcon("images/mainImage.gif").getImage().getScaledInstance(200, 200, Image.SCALE_DEFAULT));
 			imageLabel.setIcon(ii);
 			imageLabel.setHorizontalAlignment(JLabel.CENTER);
 			panel_2.add(imageLabel);
@@ -229,7 +224,6 @@ public class newMainView {
 			DefaultMutableTreeNode child1_4 = new DefaultMutableTreeNode("Swift");
 			DefaultMutableTreeNode child2_1 = new DefaultMutableTreeNode("Write");
 			DefaultMutableTreeNode child3_1 = new DefaultMutableTreeNode("MFD");
-			DefaultMutableTreeNode child3_2 = new DefaultMutableTreeNode("Instructions");
 			
 			child1.add(child1_1);
 			child1.add(child1_2);
@@ -237,7 +231,6 @@ public class newMainView {
 			child1.add(child1_4);
 			child2.add(child2_1);
 			child3.add(child3_1);
-			child3.add(child3_2);
 			
 			
 			JTree tree = new JTree(root);
@@ -281,11 +274,6 @@ public class newMainView {
 	                	frame.dispose(); //현재 윈도우만 닫힘
 	            		//setVisible(false);
 	            		new info();
-	                }
-	                else if (selectedNode == child3_2) {
-	                	frame.dispose(); //현재 윈도우만 닫힘
-	            		//setVisible(false);
-	            		new Instructions();
 	                }
 	            }
 			});
