@@ -18,6 +18,7 @@ public class PythonContentPanelInfo extends ContentPanel {
 		setPreferredSize(new Dimension(500, 5000));
 
 		rf.writeTitle("Python 소개", this); // 각 챕터의 이름입니다.
+		rf.readImage("images/python.gif", 150, 150, this);
 		rf.readText("TxtFiles/PythonTxt/python_info.txt", this);
 
 	}

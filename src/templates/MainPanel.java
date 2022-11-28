@@ -46,5 +46,35 @@ public class MainPanel extends JFrame {
 
 		setVisible(true);
 	}
+	
+	public MainPanel(String title, ContentPanel cp) {
+		
+		setTitle("Content Page");
+
+		setSize(1024, 768);
+		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+		this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2);
+
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		Container c = getContentPane();
+
+		c.setLayout(new BorderLayout());
+		c.setBackground(defaultBackgroundColor);
+
+		// 제목 라벨
+		TitlePanel tp = new TitlePanel(this,title);
+		IndexPanel ip = new IndexPanel(this);
+		scrollIndexPanel = new JScrollPane(cp, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
+				JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+		add(scrollIndexPanel, BorderLayout.CENTER);
+
+		JPanel emptySpace = new JPanel();
+		emptySpace.setPreferredSize(new Dimension(10, 768));
+		emptySpace.setBackground(defaultBackgroundColor);
+		add(emptySpace, BorderLayout.EAST); // 여백공간..
+
+		setVisible(true);
+	}
 }
 

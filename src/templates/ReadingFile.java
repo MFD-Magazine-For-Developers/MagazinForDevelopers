@@ -16,7 +16,7 @@ public class ReadingFile {
 	//세개의 메서드가 있습니다.
 	//txt파일들로 만들어서 이클립스에서 import해서 사용해야 해요.
 	
-	public void readText(String fileInput,ContentPanel cp) { //txt파일 읽는 메서드입니다.
+	public void readText(String fileInput, ContentPanel cp) { //txt파일 읽는 메서드입니다.
 		// ReadingFile 객체 만들고  ex) ReadingFile rf = new ReadingFile();
 		// rf.readText("txt파일 경로", this); 해주시면 텍스트가 창에 나와요. 
 		
@@ -72,7 +72,7 @@ public class ReadingFile {
 		
 	}
 	
-	public void readImage(String imgFile,int width,int height,ContentPanel cp) {
+	public void readImage(String imgFile, int width,int height,ContentPanel cp) {
 		// 이건 이미지 읽는 메서드인데 js만 이미지가 들어가서 다른 곳에는 사용할 일이 없을 것 같아요.
 		
 		ImageIcon intro_html_img = new ImageIcon(new ImageIcon(imgFile).getImage().getScaledInstance(width, height, Image.SCALE_DEFAULT));

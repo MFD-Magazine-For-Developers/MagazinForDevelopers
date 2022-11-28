@@ -18,5 +18,7 @@ public class PythonContentPanelChar extends ContentPanel {
 
 		rf.writeTitle("Python의 특징", this);
 		rf.readText("TxtFiles/PythonTxt/python_char.txt", this);
+		rf.readImage("images/char.png", defaultImgWidth, 500, this);
+		rf.readText("TxtFiles/PythonTxt/python_char2.txt", this);
 	}
 }

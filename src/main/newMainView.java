@@ -32,6 +32,7 @@ import python_main.PythonButtonsWrapper;
 import python_main.PythonContentPanelInfo;
 import swift_main.SwContentPanelInfo;
 import swift_main.SwiftButtonsWrapper;
+import templates.Info;
 import templates.MainPanel;
 
 import javax.swing.event.TreeSelectionEvent;
@@ -273,7 +274,7 @@ public class newMainView {
 	                else if (selectedNode == child3_1) {
 	                	frame.dispose(); //현재 윈도우만 닫힘
 	            		//setVisible(false);
-	            		new info();
+	                	new MainPanel("MFD", new Info());
 	                }
 	            }
 			});

@@ -13,7 +13,7 @@ public class JsContentPanelInfo extends ContentPanel {
 
 		super();
 		rf.writeTitle("Java Script 소개", this); // 각 챕터의 이름입니다.
-
+		rf.readImage("images/javascript.gif", 100, 100, this);
 		rf.readText("TxtFiles/JSTxt/intro.txt", this);
 		rf.readImage("images/intro_html.png", defaultImgWidth, 350, this);
 		rf.readText("TxtFiles/JSTxt/css.txt", this);
